@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Admin Panel</title>
+  <style>
+    body {
+      padding-top: 56px;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding-top: 0;
+      }
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 250px;
+      padding-top: 56px;
+      background-color: rgb(173, 173, 106);
+      color: #fff;
+    }
+
+    .sidebar a {
+      padding: 8px 16px;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+    }
+
+    .sidebar a:hover {
+      background-color: #555;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/home">Admin Panel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="/home">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h1 style="margin-top:80px">Admin Panel</h1>
+    <p>Welcome to the admin panel. You can manage your content here.</p>
+    <!-- Content -->
+  
+
+    <div class="content" style="margin-left:50px;">
+      <!-- Form -->
+      <form action="/home-updated" method="get">
+        <%home.forEach(function(veri){%>
+          <div class="form-group">
+            <div class="form-group">
+              <input type="hidden" class="form-control" name="inputId" value="<%=veri.id%>" ></textarea>
+            </div>
+            <label for="inputTitle">Title:</label>
+            <textarea class="form-control custom-textarea" class="form-control" name="inputTitle"><%=veri.title%></textarea>
+          </div>
+          <div class="form-group">
+            <label for="inputSubtitle">Subtitle:</label>
+            <textarea class="form-control custom-textarea" class="form-control" name="inputSubtitle"><%=veri.subtitle%></textarea>
+          </div>
+          <div class="form-group">
+            <label for="additionalInput">Text</label>
+            <textarea class="form-control custom-textarea" class="form-control" name="inputText" ><%=veri.text%></textarea>
+          </div>
+          <div class="form-group">
+            <label for="inputTitle2">Title 2:</label>
+            <textarea class="form-control custom-textarea" class="form-control" name="inputTitle2" ><%=veri.title2%></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="inputText2">Text 2:</label>
+            <textarea class="form-control custom-textarea" class="form-control" name="inputText2" ><%=veri.text2%></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="inputTitle3">Title 3:</label>
+            <textarea class="form-control custom-textarea" class="form-control" name="inputTitle3" ><%=veri.title3%></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="inputText3">Text 3:</label>
+            <textarea class="form-control custom-textarea" class="form-control" name="inputText3" ><%=veri.text3%></textarea>
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <%});%>
+  </div>
+
+
+
+
+
+
+  <!-- Bootstrap ve jQuery kütüphaneleri -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

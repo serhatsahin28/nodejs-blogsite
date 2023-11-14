@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Admin Panel</title>
+  <style>
+    body {
+      padding-top: 56px;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding-top: 0;
+      }
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 250px;
+      padding-top: 56px;
+      background-color: rgb(173, 173, 106);
+      color: #fff;
+    }
+
+    .sidebar a {
+      padding: 8px 16px;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+    }
+
+    .sidebar a:hover {
+      background-color: #555;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/home">Admin Panel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="/home">Home</a>
+    <a href="/about">About</a>
+ 
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h1 style="margin-top:80px">Admin paneli</h1>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Subtitle</th>
+          <th scope="col">Text</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%=about[0].title%></td>
+          <td><%=about[0].subtitle%></td>
+          <td><%=about[0].about%></td>
+          <td>
+            <a href="/aboutEdit" class="btn btn-warning btn-sm">  
+              <i class="fas fa-edit"></i> Edit
+            </a>
+          </td>
+         
+        </tr>
+        <!-- Daha fazla satır ekleyebilirsiniz -->
+      </tbody>
+    </table>
+    
+  </div>
+  
+
+  <!-- Bootstrap ve jQuery kütüphaneleri -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
